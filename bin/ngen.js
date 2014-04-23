@@ -15,11 +15,11 @@ function printHelp(opts) {
     var content = fs.readFileSync(loc, 'utf8');
 
     content = template(content, {
-        cmd: opts.cmd || 'uber-ngen',
-        template: opts.template || 'uber',
+        cmd: opts.cmd || 'ngen',
+        template: opts.template || 'raynos',
         options: opts.usageOptions || '',
         defaults: opts.usageDefaults || '',
-        directoryName: opts.directoryName || 'uber-ngen/templates'
+        directoryName: opts.directoryName || 'ngen/templates'
     });
 
     return console.log(msee.parse(content, {
@@ -33,7 +33,7 @@ function main(opts) {
         return printHelp(opts);
     }
 
-    opts.template = opts.t || opts.template || 'uber';
+    opts.template = opts.t || opts.template || 'raynos';
     opts.templates = opts.d || opts.directory ||
         path.join(__dirname, '..', 'templates');
     opts.name = opts.name || opts._[0];

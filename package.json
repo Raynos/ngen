@@ -1,17 +1,17 @@
 {
-  "name": "uber-ngen",
-  "version": "3.3.0",
+  "name": "raynos-ngen",
+  "version": "4.0.0",
   "description": "Package generator (structure, changelogs, tests, package.json, etc)",
   "keywords": [],
   "author": "TJ Holowaychuk <tj@vision-media.ca>",
   "repository": {
     "type": "git",
-    "url": "git://github.com/uber/uber-ngen.git"
+    "url": "git://github.com/Raynos/ngen.git"
   },
   "main": "index",
-  "homepage": "https://github.com/uber/uber-ngen",
+  "homepage": "https://github.com/Raynos/ngen",
   "bugs": {
-    "url": "https://github.com/uber/uber-ngen/issues",
+    "url": "https://github.com/Raynos/ngen/issues",
     "email": "raynos2@gmail.com"
   },
   "contributors": [
@@ -32,7 +32,7 @@
   "licenses": [
     {
       "type": "MIT",
-      "url": "http://github.com/uber/uber-ngen/raw/master/LICENCE"
+      "url": "http://github.com/Raynos/ngen/raw/master/LICENCE"
     }
   ],
   "scripts": {
@@ -40,7 +40,7 @@
     "jshint": "jshint --verbose --exclude-path .gitignore --exclude templates/uber/content ."
   },
   "bin": {
-    "uber-ngen": "./bin/ngen.js"
+    "ngen": "./bin/ngen.js"
   },
   "devDependencies": {
     "jshint": "~2.4.4",

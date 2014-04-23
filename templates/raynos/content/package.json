@@ -4,13 +4,16 @@
   "description": "{{description}}",
   "keywords": [],
   "author": "{{gitName}} <{{email}}>",
-  "repository": "git://github.com/uber/{{project}}.git",
+  "repository": "git://github.com/{{gitName}}/{{project}}.git",
   "main": "index",
-  "homepage": "https://github.com/uber/{{project}}",
+  "homepage": "https://github.com/{{gitName}}/{{project}}",
   "bugs": {
-    "url": "https://github.com/uber/{{project}}/issues",
+    "url": "https://github.com/{{gitName}}/{{project}}/issues",
     "email": "{{email}}"
   },
+  "contributors": [{
+    "name": "{{gitName}}"
+  }],
   "dependencies": {
   },
   "devDependencies": {
@@ -19,11 +22,12 @@
     "istanbul": "^0.2.7",
     "tap-spec": "^0.1.8",
     "pre-commit": "0.0.5",
-    "coveralls": "^2.10.0"
+    "coveralls": "^2.10.0",
+    "run-browser": "^1.3.0"
   },
   "licenses": [{
     "type": "MIT",
-    "url": "http://github.com/uber/{{project}}/raw/master/LICENSE"
+    "url": "http://github.com/{{gitName}}/{{project}}/raw/master/LICENSE"
   }],
   "scripts": {
     "test": "npm run jshint -s && NODE_ENV=test node test/index.js | tap-spec",
@@ -32,7 +36,9 @@
     "jshint": "jshint --verbose .",
     "cover": "istanbul cover --report none --print detail test/index.js",
     "view-cover": "istanbul report html && open ./coverage/index.html",
-    "travis": "npm run cover -s && istanbul report lcov && ((cat coverage/lcov.info | coveralls) || exit 0)"
+    "travis": "npm run cover -s && istanbul report lcov && ((cat coverage/lcov.info | coveralls) || exit 0)",
+    "phantom": "run-browser test/index.js -b",
+    "browser": "run-browser test/index.js"
   },
   "engine": {
     "node": ">= 0.8.x"
@@ -41,6 +47,5 @@
     "jshint-pre-commit",
     "unit-test"
   ],
-  "private": true,
-  "uber-ngen-version": "{{version}}"
+  "ngen-version": "{{version}}"
 }
