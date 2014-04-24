@@ -55,6 +55,6 @@ var {{projectName}} = require("{{project}}");
   [dep-png]: https://david-dm.org/{{gitName}}/{{project}}.png
   [dep]: https://david-dm.org/{{gitName}}/{{project}}
   [test-png]: https://ci.testling.com/{{gitName}}/{{project}}.png
-  [tes]: https://ci.testling.com/{{gitName}}/{{project}}
+  [test]: https://ci.testling.com/{{gitName}}/{{project}}
   [npm-png]: https://nodei.co/npm/{{project}}.png?stars&downloads
   [npm]: https://nodei.co/npm/{{project}}
