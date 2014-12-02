@@ -46,7 +46,7 @@ var {{projectName}} = require("{{project}}");
 
  - {{gitName}}
 
-## MIT Licenced
+## MIT Licensed
 
   [build-png]: https://secure.travis-ci.org/{{gitName}}/{{project}}.png
   [build]: https://travis-ci.org/{{gitName}}/{{project}}
