@@ -17,35 +17,32 @@
   "dependencies": {
   },
   "devDependencies": {
-    "tape": "^2.12.3",
-    "jshint": "^2.5.0",
-    "istanbul": "^0.2.7",
-    "tap-spec": "^0.1.8",
-    "pre-commit": "0.0.5",
     "coveralls": "^2.10.0",
-    "run-browser": "^1.3.0"
+    "istanbul": "^0.3.5",
+    "opn": "^1.0.1",
+    "pre-commit": "0.0.11",
+    "tap-spec": "^2.1.1",
+    "tape": "^3.4.0"
   },
   "licenses": [{
     "type": "MIT",
     "url": "http://github.com/{{gitName}}/{{project}}/raw/master/LICENSE"
   }],
   "scripts": {
-    "test": "npm run jshint -s && NODE_ENV=test node test/index.js | tap-spec",
-    "unit-test": "NODE_ENV=test node test/index.js | tap-spec",
-    "jshint-pre-commit": "jshint --verbose $(git diff --cached --name-only | grep '\\.js$')",
+    "test": "npm run jshint -s && npm run cover -s",
+    "unit-test": "node test/index.js | tap-spec",
     "jshint": "jshint --verbose .",
-    "cover": "istanbul cover --report none --print detail test/index.js",
-    "view-cover": "istanbul report html && open ./coverage/index.html",
-    "travis": "npm run cover -s && istanbul report lcov && ((cat coverage/lcov.info | coveralls) || exit 0)",
-    "phantom": "run-browser test/index.js -b",
-    "browser": "run-browser test/index.js"
+    "cover": "istanbul cover --report html --print detail -- test/index.js && npm run check-cover -s",
+    "check-cover": "istanbul check-coverage --branches=100 --lines=100 --functions=100",
+    "view-cover": "opn ./coverage/index.html",
+    "travis": "npm run cover -s && istanbul report lcov && ((cat coverage/lcov.info | coveralls) || exit 0)"
   },
   "engine": {
     "node": ">= 0.8.x"
   },
   "pre-commit": [
-    "jshint-pre-commit",
-    "unit-test"
+    "test"
   ],
+  "pre-commit.silent": true,
   "ngen-version": "{{version}}"
 }

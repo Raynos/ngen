@@ -8,8 +8,6 @@
 
 <!-- [![NPM][npm-png]][npm] -->
 
-<!-- [![browser support][test-png]][test] -->
-
 {{description}}
 
 ## Example
@@ -54,7 +52,5 @@ var {{projectName}} = require("{{project}}");
   [cover]: https://coveralls.io/r/{{gitName}}/{{project}}
   [dep-png]: https://david-dm.org/{{gitName}}/{{project}}.png
   [dep]: https://david-dm.org/{{gitName}}/{{project}}
-  [test-png]: https://ci.testling.com/{{gitName}}/{{project}}.png
-  [test]: https://ci.testling.com/{{gitName}}/{{project}}
   [npm-png]: https://nodei.co/npm/{{project}}.png?stars&downloads
   [npm]: https://nodei.co/npm/{{project}}

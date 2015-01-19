@@ -1,3 +1,5 @@
+'use strict';
+
 var spawn = require('child_process').spawn;
 var camelize = require('camelize');
 var format = require('util').format;
@@ -14,12 +16,12 @@ function fetchFromGitConfig(key) {
             key
         ]);
 
-        proc.stdout.once('data', function (chunk) {
+        proc.stdout.once('data', function onChunk(chunk) {
             called = true;
-            callback(null, chunk);
+            callback(null, String(chunk));
         });
         proc.stdout.once('error', callback);
-        proc.stdout.once('end', function () {
+        proc.stdout.once('end', function onEnd() {
             if (called) {
                 return;
             }
@@ -34,7 +36,7 @@ function fetchFromGitConfig(key) {
 
 module.exports = {
     project: 'Project name: ',
-    version: function (values, callback) {
+    version: function computeVersion(values, callback) {
         callback(null, version);
     },
     description: 'Project description: ',
